@@ -5,9 +5,11 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background-color: #222;
+    background-color: rgb(247, 11, 11);
     color: aliceblue;
     font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    
   }
   
   .jogo-container {
@@ -21,6 +23,7 @@ body {
     stroke: #fff;
     stroke-width: 4px;
     stroke-linecap: round;
+    font-size: 32px;
   }
   
   .forca-parte {
@@ -32,11 +35,11 @@ body {
   }
   
   .letras-erradas-container span {
-    margin: 0 2px;
+    margin: 0 5px;
   }
   
   .palavra-secreta-container {
-    font-size: 45px;
+    font-size: 60px;
   }
   
   .aviso-palavra-repetida {
@@ -61,7 +64,7 @@ body {
   }
   
   .popup-container {
-    background-color: rgba(0, 0, 0, 0.849);
+    background-color: rgba(233, 8, 8, 0.938);
     position: fixed;
     top: 0;
     bottom: 0;
@@ -71,19 +74,20 @@ body {
     display: none;
     align-items: center;
     justify-content: center;
+    
   }
   
   .popup {
-    background: #2980b9;
+    background: #055e4a;
     border-radius: 5px;
-    box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 10px 3px rgb(37, 194, 32);
     padding: 20px;
     text-align: center;
   }
   
   .popup button {
     cursor: pointer;
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     border: 0;
     margin-top: 20px;
     padding: 12px 20px;

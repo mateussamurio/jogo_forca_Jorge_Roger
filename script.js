@@ -1,6 +1,5 @@
-const tecnologias = ["java", "react", "node", "python", "php"];
-const palavraSecreta =
-  tecnologias[Math.floor(Math.random() * tecnologias.length)];
+const palavrasDiversas = ["amarelo", "amiga" ,"amor", "ave" ,"aviao", "avo", "balao", "bebe", "bolo", "branco" ,"cama" ,"caneca", "celular", "clube", "copo", "doce" ,"elefante" ,"escola" ,"estojo", "faca", "foto", "garfo" ,"geleia" ,"girafa" ,"janela" ,"limonada" ,"mae" ,"meiao" ,"noite", "oculos" ,"onibus", "ovo", "pai" ,"pao", "parque", "passarinho", "peixe" ,"pijama", "rato", "umbigo"];
+const palavraSecreta = palavrasDiversas[Math.floor(Math.random() * palavrasDiversas.length)];
 const letrasErradas = [];
 const letrasCorretas = [];
 
@@ -26,6 +25,7 @@ function atualizarJogo() {
   mostrarLetrasCertas();
   desenharForca();
   checarJogo();
+  revelarPalavra();
 }
 
 function mostrarLetrasErradas() {
@@ -54,7 +54,7 @@ function checarJogo() {
   const partesCorpo = document.querySelectorAll(".forca-parte");
 
   if (letrasErradas.length === partesCorpo.length) {
-    mensagem = "Fim de jogo! Você perdeu!";
+    mensagem = "Fim de jogo! Você perdeu! A palavra correta era: " + palavraSecreta;
   }
 
   if (palavraSecreta === container.innerText) {
