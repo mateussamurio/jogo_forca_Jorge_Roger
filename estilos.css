@@ -1,213 +1,92 @@
-*{
-    box-sizing: border-box;
-  }
-  
-  body {
+body {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100vw;
     height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #e3c4a8;
-    font-family: 'Rye', cursive;
-    color: #33313b;
-    text-shadow: 2px 2px 8px #f6f5f5;
-  }
-  
-  .container {
-    width: 1200px;
-    height: 767px;
-    /* background-image: url('fundo.jpg');
-    background-size: 100%; */
     overflow: hidden;
+    background-color: #222;
+    color: aliceblue;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .jogo-container {
     display: flex;
-    position: relative;
-  }
-  
-  .container::after {
-    content: '';
-    background: url('fundo.jpg');
-    background-size: 100%;
-    opacity: 0.5;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-    filter: blur(1px);
-  }
-  
-  .principal {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .mensagem {
-    flex: 1;
-    background-color: #f6f5f555;
-    margin: 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    font-size: 35px;
-    text-align: center;
-    /* display: none; */
-  }
-  
-  .mensagem-vitoria {
-    background-color: #b1f1c155;
-  }
-  
-  .mensagem-derrota {
-    background-color: #f1b1b155;
-  }
-  
-  .mensagem .reiniciar {
-    margin-top: 20px;
-    padding: 20px;
-    font-size: 25px;
-  }
-  
-  .forca {
-    width: 500px;
-    margin-top: 45px;
-    margin-left: -80px;
-  }
-  
-  .imagem-forca {
+    justify-content: space-evenly;
     width: 100%;
   }
   
-  .conteudo {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  .forca {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 4px;
+    stroke-linecap: round;
   }
   
-  h1 {
-    font-size: 90px;
-    text-align: center;
-    padding: 30px;
-  }
-  
-  .area-util {
-    flex: 1;
-    display: flex;
-  }
-  
-  .area-util > * {
-    flex: 1;
-  }
-  
-  #inicial {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* display: none; */
-    background-color: #f6f5f555;
-    margin: 20px;
-    border-radius: 10px;
-    padding: 10px;
-  }
-  
-  h2 {
-    font-size: 50px;
-    text-align: center;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .dificuldade-acoes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .dificuldade-acoes > * {
-    width: 60%;
-  }
-  
-  button {
-    background-color: #4592af;
-    color: #33313b;
-    text-shadow: 2px 2px 8px #f6f5f5, -2px -2px 8px #f6f5f5, 02px 2px 8px #f6f5f5,
-      2px -2px 8px #f6f5f5;
-    font-family: 'Rye', cursive;
-    border-radius: 10px;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    box-shadow: 0 0 8px #4592af;
-  }
-  
-  button:hover {
-    background-color: #295869;
-  }
-  
-  .dificuldade-acoes button {
-    padding: 20px;
-    margin: 10px;
-    font-size: 30px;
-  }
-  
-  #jogo {
-    display: flex;
-    flex-direction: column;
+  .forca-parte {
     display: none;
   }
   
-  #jogo > * {
-    flex: 1;
-    background-color: #f6f5f555;
-    margin: 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
+  .letras-erradas-container {
+    font-size: 32px;
   }
   
-  .teclado {
+  .letras-erradas-container span {
+    margin: 0 2px;
   }
   
-  .teclado button {
-    margin: 5px;
-    font-size: 40px;
-    width: 70px;
-    height: 70px;
+  .palavra-secreta-container {
+    font-size: 45px;
   }
   
-  .palavra {
-    display: flex;
-    align-items: flex-end;
+  .aviso-palavra-repetida {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px 10px 0 0;
+    padding: 15px 20px;
+    position: absolute;
+    bottom: -55px;
+    transition: transform 0.3s ease-in-out;
   }
   
-  .palavra > * {
+  .aviso-palavra-repetida p {
+    margin: 0;
+  }
+  
+  .aviso-palavra-repetida.show {
+    transform: translateY(-50px);
+  }
+  
+  .palavra-secreta-container span {
     margin: 0 5px;
-    font-size: 70px;
-    text-align: center;
-    height: 70px;
-    border-bottom: 5px solid #232229;
-    width: 70px;
   }
   
-  .certo {
-    background-color: #4eaf45;
-    box-shadow: 0 0 8px #4eaf45;
-  }
-  
-  .errado {
-    background-color: #af4545;
-    box-shadow: 0 0 8px #af4545;
-  }
-  
-  .escondido {
+  .popup-container {
+    background-color: rgba(0, 0, 0, 0.849);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* display: flex; */
     display: none;
-  }  
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .popup {
+    background: #2980b9;
+    border-radius: 5px;
+    box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .popup button {
+    cursor: pointer;
+    background-color: #fff;
+    border: 0;
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+  
