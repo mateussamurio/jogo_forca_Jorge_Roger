@@ -5,9 +5,9 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background-color: rgb(247, 11, 11);
+    background-color: rgb(39, 3, 3);
     color: aliceblue;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
     
   }
@@ -64,7 +64,7 @@ body {
   }
   
   .popup-container {
-    background-color: rgba(233, 8, 8, 0.938);
+    background-color: rgba(10, 0, 0, 0.938);
     position: fixed;
     top: 0;
     bottom: 0;
@@ -74,13 +74,16 @@ body {
     display: none;
     align-items: center;
     justify-content: center;
+    background :url("perdeu.jpg");
+    background-position: center;
+  
+    
     
   }
   
   .popup {
-    background: #055e4a;
+    background: #00070500;
     border-radius: 5px;
-    box-shadow: 0 15px 10px 3px rgb(37, 194, 32);
     padding: 20px;
     text-align: center;
   }
